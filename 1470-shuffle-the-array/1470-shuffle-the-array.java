@@ -4,11 +4,13 @@ class Solution
     {
         int[] res = new int[nums.length];
         int index = 0;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) 
+        {
             res[index] = nums[i];       
-            res[index + 1] = nums[i + n]; 
+            res[index + 1] = nums[i + n];
+            index += 2; 
         }
-        index += 2;
+        
         return res;
     }
 }
