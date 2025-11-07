@@ -2,14 +2,13 @@ class Solution
 {
     public boolean checkIfPangram(String sentence) 
     {
-        Set<Character> letters = new HashSet<>();
-
-        for (char c : sentence.toCharArray()) {
-            if (c >= 'a' && c <= 'z') {
-                letters.add(c);
+        for(char ch='a';ch<='z';ch++)
+        {
+            if(sentence.indexOf(ch)<0)
+            {
+                return false;
             }
         }
-
-        return letters.size() == 26;
+        return true;
     }
 }
