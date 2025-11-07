@@ -2,14 +2,7 @@ class Solution
 {
     public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) 
     {
-        int MaxVal = candies[0]; 
-        for(int i=1;i<candies.length;i++)
-        {
-            if(candies[i]>MaxVal)
-            {
-                MaxVal = candies[i];
-            }
-        }
+        int MaxVal = Arrays.stream(candies).max().getAsInt();
         ArrayList<Boolean>list = new ArrayList<>();
         for(int i=0;i<candies.length;i++)
         {
