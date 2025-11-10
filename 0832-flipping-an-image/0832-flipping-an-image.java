@@ -9,10 +9,10 @@ class Solution
             while(left<=right)
             {
                 int temp = image[i][right];
-                image[i][right] = image[i][left];
-                image[i][left] = temp;
-                right--;
-                left++; 
+                image[i][right--] = image[i][left];
+                image[i][left++] = temp;
+                // right--;
+                // left++; 
             }
         }
         for(int i=0;i<image.length;i++)
