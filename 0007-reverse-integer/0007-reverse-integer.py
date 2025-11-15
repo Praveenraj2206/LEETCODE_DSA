@@ -1,5 +1,5 @@
 class Solution:
-    def reverse(self, x)
+    def reverse(self, x):
         rev = 0
         sign = -1 if x < 0 else 1
         x = abs(x)
