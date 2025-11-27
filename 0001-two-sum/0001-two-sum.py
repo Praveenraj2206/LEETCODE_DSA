@@ -7,4 +7,3 @@ class Solution(object):
                 return [dict1[diff],key]
             dict1[value]=key
                   
-        
