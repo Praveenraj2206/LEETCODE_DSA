@@ -5,7 +5,6 @@ class Solution
         int row=mat.length;
         int col=mat[0].length;
         int[] flat=new int[r*c];
-        int x=0;
         int[][] output=new int[r][c];
         if( row*col != r*c)
         {
