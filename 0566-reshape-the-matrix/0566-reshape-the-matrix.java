@@ -11,7 +11,7 @@ class Solution
         {
             return mat;
         }
-        for(int i=0;i<row;i++)
+        for(int i=0,x=0;i<row;i++)
         {
             for(int j=0;j<col;j++)
             {
@@ -19,8 +19,8 @@ class Solution
                 x++;
             }
         }
-        x=0;
-        for(int i=0;i<r;i++)
+        
+        for(int i=0,x=0;i<r;i++)
         {
             for(int j=0;j<c;j++)
             {
