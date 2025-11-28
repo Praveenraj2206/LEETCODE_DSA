@@ -2,22 +2,25 @@ class Solution
 {
     public int[][] matrixReshape(int[][] mat, int r, int c) 
     {
+        int row=mat.length;
+        int col=mat[0].length;
         int[] flat=new int[r*c];
+        int x=0;
         int[][] output=new int[r][c];
-        if( mat.length*mat[0].length != r*c)
+        if( row*col != r*c)
         {
             return mat;
         }
-        for(int i=0,x=0;i<mat.length;i++)
+        for(int i=0;i<row;i++)
         {
-            for(int j=0;j<mat[0].length;j++)
+            for(int j=0;j<col;j++)
             {
                 flat[x]=mat[i][j];
                 x++;
             }
         }
-        
-        for(int i=0,x=0;i<r;i++)
+        x=0;
+        for(int i=0;i<r;i++)
         {
             for(int j=0;j<c;j++)
             {
