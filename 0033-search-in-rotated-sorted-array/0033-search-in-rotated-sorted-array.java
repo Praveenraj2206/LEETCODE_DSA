@@ -49,13 +49,13 @@ class Solution
             {
                 return mid-1;
             }
-            if (arr[mid] >= arr[start]) 
+            if (arr[mid] <= arr[start]) 
             {
-                start = mid + 1;
+                end=mid-1;
             }
             else
             {
-                end = mid - 1;
+                start = mid +1;
             }
         }
         return -1;
