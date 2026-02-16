@@ -28,4 +28,3 @@ class Solution(object):
 
 
         # return s[::-1]
-        
