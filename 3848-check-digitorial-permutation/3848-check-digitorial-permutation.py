@@ -21,12 +21,7 @@
 #         return False
 
 class Solution(object):
-    def isDigitorialPermutation(self, n):
-        # Edge case
-        if n == 0:
-            return False
-        
-        # Precompute factorials for digits 0–9
+    def isDigitorialPermutation(self, n):     
         fact = [1] * 10
         for i in range(1, 10):
             fact[i] = fact[i - 1] * i
@@ -40,8 +35,6 @@ class Solution(object):
         
         original = n
         sum_n = digit_factorial_sum(n)
-        
-        # Check if result is a fixed point AND permutation match
         if (digit_factorial_sum(sum_n) == sum_n and
             Counter(str(original)) == Counter(str(sum_n)) and
             len(str(original)) == len(str(sum_n))):
