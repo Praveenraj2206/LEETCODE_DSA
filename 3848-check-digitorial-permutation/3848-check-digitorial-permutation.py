@@ -21,7 +21,9 @@
 #         return False
 
 class Solution(object):
-    def isDigitorialPermutation(self, n):     
+    def isDigitorialPermutation(self, n): 
+        # if n==0:
+        #     return False    
         fact = [1] * 10
         for i in range(1, 10):
             fact[i] = fact[i - 1] * i
