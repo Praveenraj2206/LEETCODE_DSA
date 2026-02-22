@@ -2,16 +2,19 @@ class Solution
 {
     public int arrangeCoins(int n) 
     {
-        if (n==1)
-            return 1;
-        int coins_left = n;
-        int i;
-        for(i=1;i<n;i++)
+        long start=0;
+        long end=n;
+        while (start <= end)
         {
-            if(coins_left<i)
-                return i-1;
-            coins_left += (-1* i);
+            long k = start+(end-start)/2;
+            long curr = k*(k+1)/2;
+            if (n == curr)
+                return (int) k;
+            if (n<curr)
+                end = k-1;
+            else
+                start = k+1;
         }
-        return i-1;
+        return (int)end;
     }
 }
