@@ -1,6 +1,6 @@
 class Solution(object):
     def maxProfit(self, prices):
-        min_price = 10000
+        min_price = float('inf')
         max_profit = 0
         for price in prices:
             if price < min_price:
