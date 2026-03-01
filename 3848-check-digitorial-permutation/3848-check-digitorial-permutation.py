@@ -15,6 +15,5 @@ class Solution(object):
         
         return (
             factorial_sum(sum_n) == sum_n and
-            Counter(str(n)) == Counter(str(sum_n)) and
-            len(str(n)) == len(str(sum_n))
+            Counter(str(n)) == Counter(str(sum_n)) 
         )
