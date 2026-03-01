@@ -13,7 +13,4 @@ class Solution(object):
         
         sum_n = factorial_sum(n)
         
-        return (
-            factorial_sum(sum_n) == sum_n and
-            Counter(str(n)) == Counter(str(sum_n)) 
-        )
+        return factorial_sum(sum_n) == sum_n and Counter(str(n)) == Counter(str(sum_n))
