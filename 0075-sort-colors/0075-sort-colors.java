@@ -2,28 +2,19 @@ class Solution
 {
     public void sortColors(int[] arr) 
     {
-        int low, mid, high;
-        low = mid = 0;
-        high = arr.length - 1;
-        while (mid<=high)
+        int pointer = 0;
+        for(int value = 0; value <= 2; value++)
         {
-            if(arr[mid] == 0)
+            for(int j = 0; j < arr.length; j++)
             {
-                int temp = arr[low];
-                arr[low] = arr[mid];
-                arr[mid] = temp;
-                low++;
-                mid++;
+                if(arr[j] == value)
+                {
+                    int temp = arr[pointer];
+                    arr[pointer] = arr[j];
+                    arr[j] = temp;
+                    pointer++;
+                }
             }
-            else if(arr[mid] == 1)
-                mid++;
-            else
-            {
-                int temp = arr[mid];
-                arr[mid] = arr[high];
-                arr[high] = temp;
-                high--;
-            }   
         }
     }
 }
