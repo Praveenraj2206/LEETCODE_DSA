@@ -10,7 +10,6 @@ class Solution
             res[index + 1] = nums[i + n];
             index += 2; 
         }
-        
         return res;
     }
 }
