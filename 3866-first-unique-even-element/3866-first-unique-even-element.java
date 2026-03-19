@@ -13,7 +13,8 @@ class Solution
                         c++;
                 }
             
-            if(c==1)return nums[i];
+            if(c==1)
+                return nums[i];
             }
         }
         return -1;
