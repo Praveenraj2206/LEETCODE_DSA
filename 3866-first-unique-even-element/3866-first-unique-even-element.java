@@ -2,20 +2,16 @@ class Solution
 {
     public int firstUniqueEven(int[] nums) 
     {
-        for(int i=0;i<nums.length;i++)
+        int[] freq = new int[101];
+        for (int num : nums) 
         {
-            if(nums[i]%2==0)
-            {
-                int c=0;
-                for( int j=0;j<nums.length;j++)
-                {
-                    if(nums[i]==nums[j])
-                        c++;
-                }
-            
-            if(c==1)
-                return nums[i];
-            }
+            if (num % 2 == 0) 
+                freq[num]++;
+        }
+        for (int num : nums) 
+        {
+            if (num % 2 == 0 && freq[num] == 1) 
+                return num;
         }
         return -1;
     }
