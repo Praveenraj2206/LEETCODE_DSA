@@ -9,9 +9,7 @@ class Solution
         {
             int sum = carry;
             if(i>=0)
-            {
                 sum += num[i--];
-            }
             if(k>0)
             {
                 sum += k%10;
@@ -21,9 +19,7 @@ class Solution
             carry = sum/10;
         }
         if(carry>0)
-        {
             ans.add(carry);
-        }
         Collections.reverse(ans);
         return ans;
     }
