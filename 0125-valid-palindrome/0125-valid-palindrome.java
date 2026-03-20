@@ -6,7 +6,8 @@ class Solution
         StringBuilder ans = new StringBuilder();
         for (char c : s.toCharArray()) 
         {
-            if (Character.isLetterOrDigit(c))          ans.append(Character.toLowerCase(c));
+            if (Character.isLetterOrDigit(c))
+                 ans.append(Character.toLowerCase(c));
         }
 
         int left = 0;
