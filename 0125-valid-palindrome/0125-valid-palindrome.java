@@ -7,7 +7,7 @@ class Solution
         for (char c : s.toCharArray()) 
         {
             if (Character.isLetterOrDigit(c))
-                 ans.append(Character.toLowerCase(c));
+                ans.append(Character.toLowerCase(c));
         }
 
         int left = 0;
