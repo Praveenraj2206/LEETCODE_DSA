@@ -10,7 +10,7 @@ class Solution
                 return i;
             i++;
         }
-        return i;
+        return nums.length;
     }
     public void cyclic(int[] nums)
     {
@@ -18,18 +18,13 @@ class Solution
         while(i<nums.length)
         {
             int correct = nums[i];
-            if(correct == nums.length)
-            {
-                i++;
-                continue;
-            }
-            else if(nums[i] != nums[correct])
+            if(nums[i]<nums.length && nums[i] != nums[correct])
                 swap(nums, i, correct);
             else
                 i++;
         }
     }
-    void swap(int[] nums,int first,int second)
+    public void swap(int[] nums,int first,int second)
     {
         int temp = nums[first];
         nums[first] = nums[second];
