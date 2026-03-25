@@ -3,10 +3,8 @@ class Solution {
         int n = s.length();
         char[] result = new char[n];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
             result[indices[i]] = s.charAt(i);
-        }
-
         return new String(result);
     }
 }
