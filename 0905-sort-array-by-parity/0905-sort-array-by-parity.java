@@ -7,12 +7,16 @@ class Solution
         {
             if(nums[j]%2 == 0)
             {
-                int temp=nums[i];
-                nums[i] = nums[j];
-                nums[j] = temp;
+                swap(nums,i,j);
                 i++;
             }
         }
         return nums;
+    }
+    public void swap(int[] nums,int i, int j)
+    {
+        int temp=nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 }
