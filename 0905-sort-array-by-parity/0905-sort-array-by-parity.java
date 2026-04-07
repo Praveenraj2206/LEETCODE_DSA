@@ -2,22 +2,17 @@ class Solution
 {
     public int[] sortArrayByParity(int[] nums) 
     {
-        int even = 0;
-        for(int num : nums)
+        int i=0;
+        for(int j=0;j<nums.length;j++)
         {
-            if(num%2 == 0)
-                even++;
+            if(nums[j]%2 == 0)
+            {
+                int temp=nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+                i++;
+            }
         }
-        int odd=even;
-        even = even -1;
-        int[] arr = new int[nums.length];
-        for(int i=0;i<nums.length;i++)
-        {
-            if(nums[i]%2 == 0)
-                arr[even--] = nums[i];
-            else
-                arr[odd++] = nums[i];
-        }
-        return arr;
+        return nums;
     }
 }
