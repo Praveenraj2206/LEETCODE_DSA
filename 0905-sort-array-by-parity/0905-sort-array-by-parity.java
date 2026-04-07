@@ -15,13 +15,13 @@ class Solution
         {
             if(nums[i]%2 == 0)
             {
-                arr[even] = nums[i];
-                even--;
+                arr[even--] = nums[i];
+                // even--;
             }
             else
             {
-                arr[odd] = nums[i];
-                odd++;
+                arr[odd++] = nums[i];
+                // odd++;
             }
         }
         return arr;
