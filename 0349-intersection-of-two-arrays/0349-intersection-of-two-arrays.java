@@ -12,9 +12,10 @@ class Solution
                 res.add(num);
                 set.remove(num);
         }
-        int[] arr = new int[res.size()];
-        for(int i=0;i<res.size();i++)
-            arr[i] = res.get(i);
-        return arr;
+        int[] ans=new int[res.size()];
+        int i=0;
+        for(int num:res)
+            ans[i++]=num;
+        return ans;
     }
 }
