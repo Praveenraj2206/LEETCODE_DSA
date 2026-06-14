@@ -10,9 +10,7 @@ class Solution
             while(x > 0)
             {
                 int rem=x%10;
-                if(rem==0)
-                    return false;
-                if(set.contains(rem))
+                if(set.contains(rem) || rem==0)
                     return false;
                 set.add(rem);
                 x /= 10;
