@@ -2,20 +2,21 @@ class Solution
 {
     public boolean isPalindrome(String s) 
     {
-
-        StringBuilder ans = new StringBuilder();
-        for (char c : s.toCharArray()) 
-        {
-            if (Character.isLetterOrDigit(c))
-                ans.append(Character.toLowerCase(c));
-        }
-
-        int left = 0;
-        int right = ans.length() - 1;
-
+        int left = 0, right = s.length() - 1;
+        s = s.toLowerCase();
         while (left < right) 
         {
-            if (ans.charAt(left) != ans.charAt(right))
+            if (!Character.isLetterOrDigit(s.charAt(left))) 
+            {
+                left++;
+                continue;
+            }
+            if (!Character.isLetterOrDigit(s.charAt(right))) 
+            {
+                right--;
+                continue;
+            }
+            if (s.charAt(left) != s.charAt(right))
                 return false;
             left++;
             right--;
