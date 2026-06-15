@@ -4,15 +4,15 @@ class Solution
     {
         if(x<0)
             return false;
-        int y = x;
-        int num=0;
-        while(y>0)
+        int temp = x, rev = 0;
+        while(x > 0) 
         {
-            num = 10 * num + (y%10);
-            y /= 10;
+            rev = rev * 10 + x % 10;
+            x /= 10;
         }
-        return num == x;
+        return temp == rev;
     }
+    
 }
 
 
