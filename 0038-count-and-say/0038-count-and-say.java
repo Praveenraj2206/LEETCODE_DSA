@@ -2,21 +2,24 @@ class Solution
 {
     public String countAndSay(int n) 
     {
-        if(n==1)
+        if (n == 1) 
             return "1";
-        String say = countAndSay(n-1);
-        String res="";
-        for(int i=0;i<say.length();i++)
+        String prev = countAndSay(n - 1);
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < prev.length(); i++) 
         {
-            char ch = say.charAt(i);
+            char ch = prev.charAt(i);
             int count = 1;
-            while(i < say.length()-1 && say.charAt(i)==say.charAt(i+1))
+            while (i < prev.length() - 1 && prev.charAt(i) == prev.charAt(i + 1)) 
             {
                 count++;
                 i++;
             }
-            res += count + "" + ch;
+            sb.append(count);
+            sb.append(ch);
         }
-        return res;
+
+        return sb.toString();
     }
 }
