@@ -9,8 +9,10 @@ class Solution
         for(int num:nums1)
         {
             if(set.contains(num))
+            {
                 res.add(num);
                 set.remove(num);
+            }
         }
         int[] ans=new int[res.size()];
         int i=0;
