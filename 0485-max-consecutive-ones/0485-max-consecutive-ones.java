@@ -6,16 +6,10 @@ class Solution
         for (int num : nums) 
         {
             if (num == 1)
-                max = maxi(max, ++count);
+                max = Math.max(max, ++count);
             else
                 count = 0;
         }
         return max;
-    }
-    public int maxi(int a,int b)
-    {
-        if(a>b)
-            return a;
-        return b;
     }
 }
