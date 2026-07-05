@@ -8,15 +8,9 @@ class Solution
         while (p2 >= 0)
         {
             if (p1 >= 0 && nums1[p1] > nums2[p2])
-            {
-                nums1[p3] = nums1[p1];
-                p1--;
-            }
+                nums1[p3] = nums1[p1--];
             else
-            {
-                nums1[p3] = nums2[p2];
-                p2--;
-            }
+                nums1[p3] = nums2[p2--];
             p3--;
         }
     }
