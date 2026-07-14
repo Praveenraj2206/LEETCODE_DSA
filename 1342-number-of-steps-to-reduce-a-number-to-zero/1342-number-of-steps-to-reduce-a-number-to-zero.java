@@ -3,23 +3,14 @@ class Solution
     private int count=0;
     public int numberOfSteps(int num) 
     {
-        return helper(num);
-    }
-    private int helper(int num)
-    {
         if(num==0)
             return count;
         if((num&1) != 1)
-        {
             num = num/2;
-            count +=1;
-        }
         else
-        {
             num -= 1;
-            count += 1;
-        }
-        return helper(num);
+        count += 1;
+        return numberOfSteps(num);
     }
 }
 
