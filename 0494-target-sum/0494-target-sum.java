@@ -1,22 +1,17 @@
 class Solution 
 {
-    public static int count=0;
     public int findTargetSumWays(int[] nums, int target) 
     {
-        solve(nums,target,0,0);
-        int temp=count;
-        count=0;
-        return temp;
+        return solve(nums, target, 0, 0);
     }
-    public void solve(int[] nums,int target,int index,int sum)
+
+    private int solve(int[] nums, int target, int index, int sum) 
     {
-        if(index==nums.length)
-        {
-            if(sum==target)
-                count++;
-            return;
-        }
-        solve(nums,target,index+1,sum+nums[index]);
-        solve(nums,target,index+1,sum-nums[index]);
+        if (index == nums.length) 
+            return (sum == target) ? 1 : 0;
+
+        int add = solve(nums, target, index + 1, sum + nums[index]);
+        int subtract = solve(nums, target, index + 1, sum - nums[index]);
+        return add + subtract;
     }
 }
