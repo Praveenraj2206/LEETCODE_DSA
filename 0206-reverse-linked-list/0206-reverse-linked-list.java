@@ -8,15 +8,18 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-import java.util.LinkedList;
-class Solution {
-    public ListNode reverseList(ListNode head) {
+class Solution 
+{
+    public ListNode reverseList(ListNode head) 
+    {
+        ListNode curr = head;
         ListNode prev = null;
-        while (head != null) {
-            ListNode next = head.next; 
-            head.next = prev;          
-            prev = head;               
-            head = next;               
+        while(curr != null)
+        {
+            ListNode nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode;
         }
         return prev;
     }
