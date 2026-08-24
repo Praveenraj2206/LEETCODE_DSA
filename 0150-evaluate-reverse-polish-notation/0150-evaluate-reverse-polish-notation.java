@@ -1,5 +1,30 @@
 class Solution 
 {
+    public int evalRPN(String[] tokens) 
+    {
+        Stack<Integer> stack = new Stack<>();
+        for(int i=0;i<tokens.length;i++)
+        {
+            if(!"+*/-".contains(tokens[i]))
+                stack.push(Integer.parseInt(tokens[i]));
+            else
+            {
+                int a = stack.pop();
+                int b = stack.pop();
+                if(tokens[i].equals("+")) 
+                    stack.push(a+b);
+                else if(tokens[i].equals("-")) 
+                    stack.push(b-a);
+                else if(tokens[i].equals("*")) 
+                    stack.push(a*b);
+                else 
+                    stack.push(b/a);
+            }
+        }
+        return stack.pop();
+    }
+
+
     // public int evalRPN(String[] tokens) 
     // {
     //     Stack<Integer> stack = new Stack<>();
@@ -49,41 +74,41 @@ class Solution
     // }
 
 
-    public int evalRPN(String[] tokens) 
-    {
-        Stack<Integer> stack = new Stack<>();
-        for (String val : tokens) 
-        {
-            switch (val) 
-            {
-                case "+":
-                    int a = stack.pop();
-                    int b = stack.pop();
-                    stack.push(b + a);
-                    break;
+    // public int evalRPN(String[] tokens) 
+    // {
+    //     Stack<Integer> stack = new Stack<>();
+    //     for (String val : tokens) 
+    //     {
+    //         switch (val) 
+    //         {
+    //             case "+":
+    //                 int a = stack.pop();
+    //                 int b = stack.pop();
+    //                 stack.push(b + a);
+    //                 break;
 
-                case "-":
-                    a = stack.pop();
-                    b = stack.pop();
-                    stack.push(b - a);
-                    break;
+    //             case "-":
+    //                 a = stack.pop();
+    //                 b = stack.pop();
+    //                 stack.push(b - a);
+    //                 break;
 
-                case "*":
-                    a = stack.pop();
-                    b = stack.pop();
-                    stack.push(b * a);
-                    break;
+    //             case "*":
+    //                 a = stack.pop();
+    //                 b = stack.pop();
+    //                 stack.push(b * a);
+    //                 break;
 
-                case "/":
-                    a = stack.pop();
-                    b = stack.pop();
-                    stack.push(b / a);
-                    break;
+    //             case "/":
+    //                 a = stack.pop();
+    //                 b = stack.pop();
+    //                 stack.push(b / a);
+    //                 break;
 
-                default:
-                    stack.push(Integer.parseInt(val));
-            }
-        }
-        return stack.pop();
-    }
+    //             default:
+    //                 stack.push(Integer.parseInt(val));
+    //         }
+    //     }
+    //     return stack.pop();
+    // }
 }
