@@ -8,9 +8,7 @@ class Solution
         for(int i=n-1;i>=0;i--)
         {
             while(!stack.isEmpty() && temperatures[i] >= temperatures[stack.peek()])
-            {
                 stack.pop();
-            }
             if(stack.isEmpty())
                 ans[i] = 0;
             else
