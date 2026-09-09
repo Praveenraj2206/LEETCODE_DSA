@@ -7,10 +7,14 @@ class Solution
         {
             int n = stack.length();
             if (n > 0 && stack.charAt(n - 1) == c) 
+            {
                 stack.deleteCharAt(n - 1);
+            }
             else
+            {
                 stack.append(c);
             }
+        }
         return stack.toString();
     }
 }
