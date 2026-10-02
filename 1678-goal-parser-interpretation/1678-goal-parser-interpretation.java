@@ -2,29 +2,26 @@ class Solution
 {
     public String interpret(String command) 
     {
-        StringBuilder ans = new StringBuilder();
-        Stack<Character> stack = new Stack<>();
-        int i=0;
-        while(i<command.length())  
+        StringBuilder result = new StringBuilder();
+        int i = 0;
+        while(i < command.length())
         {
-            char ch = command.charAt(i);
-            if(Character.isLetter(ch))
-                ans.append(ch);
-            else if(ch == '(')
+            if(command.charAt(i)  == 'G')
             {
+                result.append("G");
                 i++;
-                ch = command.charAt(i);
-                if(ch == ')')
-                    ans.append('o');
-                else
-                {
-                    i += 2;
-                    ans.append('a');
-                    ans.append('l');
-                }
             }
-            i++;
+            else if(command.charAt(i) == '(' && command.charAt(i+1) == ')')
+            {
+                result.append("o");
+                i = i + 2;
+            }
+            else
+            {
+                result.append("al");
+                i = i + 4;
+            }
         }
-        return new String(ans);
+        return result.toString();
     }
 }
