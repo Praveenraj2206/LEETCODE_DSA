@@ -2,49 +2,20 @@ class Solution
 {
     public boolean isValid(String s) 
     {
-        HashMap<Character,Character> map=new HashMap<>();
-        Stack<Character> stack=new Stack<>();
-        map.put(']','[');
-        map.put('}','{');
-        map.put(')','(');
-        for(char ch:s.toCharArray())
+        HashMap<Character,Character> map = new HashMap<>();
+        Stack<Character> stack = new Stack<>();
+        map.put(')', '(');
+        map.put(']', '[');
+        map.put('}', '{');
+        for(char ch : s.toCharArray())
         {
             if(!map.containsKey(ch))
                 stack.push(ch);
-            else
-            {
-                if(stack.isEmpty() || map.get(ch) != stack.pop())
-                    return false;
-            }
+            else if(stack.isEmpty() || stack.pop() != map.get(ch))
+                return false;
         }
         return stack.isEmpty();
     }
-}
-
-
-
-
-// class Solution 
-// {
-//     public boolean isValid(String s) 
-//     {
-//         HashMap<Character,Character> map = new HashMap<>();
-//         Stack<Character> stack = new Stack<>();
-//         map.put(')', '(');
-//         map.put(']', '[');
-//         map.put('}', '{');
-//         for(char ch : s.toCharArray())
-//         {
-//             if(!map.containsKey(ch))
-//                 stack.push(ch);
-//             else
-//             {
-//                 if(stack.isEmpty() || stack.pop() != map.get(ch))
-//                     return false;
-//             }
-//         }
-//         return stack.isEmpty();
-//     }
 
 
 
@@ -70,4 +41,4 @@ class Solution
     //     }
     //     return stack.isEmpty();
     // }
-// }
+}
