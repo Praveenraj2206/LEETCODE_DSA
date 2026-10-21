@@ -12,17 +12,50 @@ class Solution
 {
     public ListNode reverseList(ListNode head) 
     {
-        ListNode newHead = null;
+        ListNode prev = null;
         ListNode curr = head;
-        while(curr != null)
+        ListNode temp = head;
+        while(temp != null)
         {
-            ListNode node = new ListNode(curr.val);
-            node.next = newHead;
-            curr = curr.next;
-            newHead = node;
+            temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
         }
-        return newHead;
+        return prev;
     }
+}
+
+
+
+
+
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+// class Solution 
+// {
+//     public ListNode reverseList(ListNode head) 
+//     {
+//         ListNode newHead = null;
+//         ListNode curr = head;
+//         while(curr != null)
+//         {
+//             ListNode node = new ListNode(curr.val);
+//             node.next = newHead;
+//             curr = curr.next;
+//             newHead = node;
+//         }
+//         return newHead;
+//     }
 
 
     
@@ -40,4 +73,4 @@ class Solution
     //     }
     //     return prev;
     // }
-}
+// }
