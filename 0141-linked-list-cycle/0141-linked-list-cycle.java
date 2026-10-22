@@ -15,54 +15,15 @@ public class Solution
     {
         if(head == null)
             return false;
-        ListNode slow = head;
-        ListNode fast = head;
-        while(fast != null && fast.next != null)
+        HashSet<ListNode> set = new HashSet<>();
+        ListNode node = head;
+        while(!set.contains(node))
         {
-            slow = slow.next;
-            fast = fast.next.next;
-            if(slow == fast)
-                return true;
+            set.add(node);
+            node = node.next;
+            if(node == null)
+                return false;
         }
-        return false;
+        return true;
     }
 }
-
-
-
-// public class Solution 
-// {
-//     public boolean hasCycle(ListNode head) 
-//     {
-//         if(head == null)
-//             return false;
-//         ListNode slow = head;
-//         ListNode fast = head;
-//         while(fast != null && fast.next != null)
-//         {
-//             slow = slow.next;
-//             fast = fast.next.next;
-//             if(slow == fast)
-//                 return true;
-//         }
-//         return false;
-//     }
-
-
-
-    // public boolean hasCycle(ListNode head) 
-    // {
-    //     if(head == null)
-    //         return false;
-    //     HashSet<ListNode> set = new HashSet<>();
-    //     ListNode node = head;
-    //     while(!set.contains(node))
-    //     {
-    //         set.add(node);
-    //         node = node.next;
-    //         if(node == null)
-    //             return false;
-    //     }
-    //     return true;
-    // }
-// }
