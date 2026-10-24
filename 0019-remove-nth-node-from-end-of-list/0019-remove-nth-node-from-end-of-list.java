@@ -22,11 +22,7 @@ class Solution
         if(n!=0)
             return head;
         if(fast == null)
-        {
-            // ListNode temp=head;
-            // head=head.next;
             return head.next;
-        }
         ListNode prev=null;
         while(fast!=null)
         {
