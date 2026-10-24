@@ -28,44 +28,33 @@ class Solution
             slow=slow.next;
         }
         prev.next = null;
-        ListNode head1 = mergeSort(head);
-        ListNode head2 = mergeSort(slow);
-        ListNode ans = merge(head1,head2);
+        ListNode left = mergeSort(head);
+        ListNode right = mergeSort(slow);
+        ListNode ans = merge(left,right);
         return ans;
     }
-    public ListNode merge(ListNode head1,ListNode head2) 
+    private ListNode merge(ListNode left, ListNode right) 
     {
-        ListNode ansHead=new ListNode(-1);
-        ListNode ansTail=ansHead;
-        while(head1 != null && head2 != null)
+        ListNode dummy = new ListNode(-1);
+        ListNode tail = dummy;
+        while (left != null && right != null) 
         {
-            if(head1.val <= head2.val)
+            if (left.val <= right.val) 
             {
-                ansTail.next = new ListNode(head1.val);
-                head1=head1.next;
-            }
-            else
+                tail.next = left;
+                left = left.next;
+            } 
+            else 
             {
-                ansTail.next = new ListNode(head2.val);
-                head2=head2.next;
+                tail.next = right;
+                right = right.next;
             }
-            ansTail = ansTail.next;
+            tail = tail.next;
         }
-        while(head1!=null)
-        {
-            ansTail.next = new ListNode(head1.val);
-            head1=head1.next;
-            ansTail = ansTail.next;
-        }
-        while(head2!=null)
-        {
-            ansTail.next = new ListNode(head2.val);
-            head2=head2.next;
-            ansTail = ansTail.next;
-        }
-        ListNode t1=ansHead;
-        ansHead=ansHead.next;
-        t1.next=null;
-        return ansHead;
+        if (left != null)
+            tail.next = left;
+        else
+            tail.next = right;
+        return dummy.next;
     }
 }
