@@ -7,7 +7,7 @@ class Solution
         int sum=0;
         int carry=0;
         StringBuilder res=new StringBuilder();
-        while(n>=0 || m>=0)
+        while(n>=0 || m>=0 || carry>0)
         {
             sum = carry;
             if(n>=0)
@@ -23,11 +23,6 @@ class Solution
             res.append((sum%2 == 0)?'0':'1');
             carry = (sum>1)?1:0;
         }
-        if(carry==1)
-        {
-            res.append('1');
-        }
-        res.reverse();
-        return res.toString();
+        return res.reverse().toString();
     }
 }
