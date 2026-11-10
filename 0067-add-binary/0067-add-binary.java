@@ -11,11 +11,15 @@ class Solution
         {
             sum = carry;
             if(n>=0)
+            {
                 sum += (a.charAt(n) == '1')?1:0;
+                n--;
+            }
             if(m>=0)
+            {
                 sum += (b.charAt(m) == '1')?1:0;
-            n--;
-            m--;
+                m--;
+            }
             ans.append((sum%2 == 0)?'0':'1');
             carry = (sum>1)?1:0;
         }
